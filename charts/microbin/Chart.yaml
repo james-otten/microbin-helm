@@ -1,0 +1,13 @@
+apiVersion: v2
+name: microbin
+description: Microbin - File sharing made easy
+type: application
+version: 0.1.0
+appVersion: "2.1.0"
+home: "https://github.com/james-otten/microbin-helm"
+sources: ["https://github.com/james-otten/microbin-helm"]
+icon: https://microbin.eu/img/logo-square.png
+maintainers:
+  - email: info@jamesotten.com
+    name: James Otten
+    url: https://jamesotten.com
