@@ -8,6 +8,7 @@ image:
   # -- image pull secret name
   pullSecretName: ""
 
+# -- Environment variables. See https://microbin.eu/docs/installation-and-configuration/configuration Do not use for secrets, MICROBIN_PUBLIC_PATH, or MICROBIN_PORT
 env:
   # - name: MICROBIN_EDITABLE
   #   value: "true"
@@ -23,8 +24,6 @@ env:
   #   value: "false"
   # - name: MICROBIN_HIGHLIGHTSaccessModeYNTAX
   #   value: "true"
-  # - name: MICROBIN_PORT
-  #   value: "8080"
   - name: MICROBIN_BIND
     value: "0.0.0.0"
   # - name: MICROBIN_PRIVATE

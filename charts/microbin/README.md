@@ -61,7 +61,7 @@ Microbin - File sharing made easy
 </td><td>str</td><td><code>``</code></td><td><p><code> image pull secret name</code></p></td></tr>
 </table>
 
-<h1>env</h1>
+<h1>env</h1><p><code> Environment variables. See https://microbin.eu/docs/installation-and-configuration/configuration Do not use for secrets, MICROBIN_PUBLIC_PATH, or MICROBIN_PORT</code></p>
 <table style="">
     <tr>
         <th>Key</th>
@@ -71,7 +71,7 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[env[0]](./values.yaml#L11)
+[env[0]](./values.yaml#L12)
 
 </td><td>dict</td><td><code>`{'name': 'MICROBIN_BIND', 'value': '0.0.0.0'}`</code></td><td></td></tr>
 </table>
@@ -86,11 +86,11 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[secret.create](./values.yaml#L87)
+[secret.create](./values.yaml#L86)
 
 </td><td>bool</td><td><code>`False`</code></td><td><p><code> enable secret creation</code></p></td></tr><tr style="" ><td>
 
-[secret.name](./values.yaml#L89)
+[secret.name](./values.yaml#L88)
 
 </td><td>str</td><td><code>`microbin`</code></td><td><p><code> secret name for sensitive configuration values</code></p></td></tr>
 </table>
@@ -105,7 +105,7 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[nameOverride](./values.yaml#L98)
+[nameOverride](./values.yaml#L97)
 
 </td><td>str</td><td><code>``</code></td><td><p><code> This is to override the chart name</code></p></td></tr>
 </table>
@@ -120,7 +120,7 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[fullnameOverride](./values.yaml#L100)
+[fullnameOverride](./values.yaml#L99)
 
 </td><td>str</td><td><code>``</code></td><td><p><code> This is to override the full name</code></p></td></tr>
 </table>
@@ -168,15 +168,15 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[service.type](./values.yaml#L113)
+[service.type](./values.yaml#L112)
 
 </td><td>str</td><td><code>`ClusterIP`</code></td><td><p><code> Service type to expose the microbin pod to cluster. Options are ClusterIP, NodePort, LoadBalancer, or ExternalName</code></p></td></tr><tr style="" ><td>
 
-[service.port](./values.yaml#L115)
+[service.port](./values.yaml#L114)
 
 </td><td>int</td><td><code>`80`</code></td><td><p><code> Port to expose microbin service on</code></p></td></tr><tr style="" ><td>
 
-[service.containerPort](./values.yaml#L117)
+[service.containerPort](./values.yaml#L116)
 
 </td><td>int</td><td><code>`8080`</code></td><td><p><code> Target port for the microbin container</code></p></td></tr>
 </table>
@@ -191,7 +191,7 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[hostname](./values.yaml#L119)
+[hostname](./values.yaml#L118)
 
 </td><td>str</td><td><code>`chart-example.local`</code></td><td></td></tr>
 </table>
@@ -206,19 +206,19 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[ingress.enabled](./values.yaml#L123)
+[ingress.enabled](./values.yaml#L122)
 
 </td><td>bool</td><td><code>`False`</code></td><td><p><code> Enable Ingress controller for microbin</code></p></td></tr><tr style="" ><td>
 
-[ingress.className](./values.yaml#L125)
+[ingress.className](./values.yaml#L124)
 
 </td><td>str</td><td><code>``</code></td><td><p><code> Ingress class to use, e.g., for GKE Ingress use "gce", for NGINX Ingress use "nginx". If using an Ingress class other than the default, ensure your cluster has the corresponding Ingress controller installed and configured.</code></p></td></tr><tr style="" ><td>
 
-[ingress.tls.enabled](./values.yaml#L132)
+[ingress.tls.enabled](./values.yaml#L131)
 
 </td><td>bool</td><td><code>`False`</code></td><td><p><code> Enable tls for microbin</code></p></td></tr><tr style="" ><td>
 
-[ingress.tls.secretName](./values.yaml#L134)
+[ingress.tls.secretName](./values.yaml#L133)
 
 </td><td>str</td><td><code>`microbin-tls`</code></td><td><p><code> Secret name for tls</code></p></td></tr>
 </table>
@@ -244,23 +244,23 @@ Microbin - File sharing made easy
     </tr>
 <tr style="" ><td>
 
-[persistence.enabled](./values.yaml#L147)
+[persistence.enabled](./values.yaml#L146)
 
 </td><td>bool</td><td><code>`True`</code></td><td><p><code> Enable persistence for microbin</code></p></td></tr><tr style="" ><td>
 
-[persistence.mountPath](./values.yaml#L149)
+[persistence.mountPath](./values.yaml#L148)
 
 </td><td>str</td><td><code>`/app/microbin_data`</code></td><td><p><code> Mount path for the microbin_data directory</code></p></td></tr><tr style="" ><td>
 
-[persistence.accessMode](./values.yaml#L151)
+[persistence.accessMode](./values.yaml#L150)
 
 </td><td>str</td><td><code>`ReadWriteOnce`</code></td><td><p><code> Access mode for the microbin volume</code></p></td></tr><tr style="" ><td>
 
-[persistence.size](./values.yaml#L153)
+[persistence.size](./values.yaml#L152)
 
 </td><td>str</td><td><code>`1Gi`</code></td><td><p><code> Size of the microbin PVC</code></p></td></tr><tr style="" ><td>
 
-[persistence.storageClass](./values.yaml#L155)
+[persistence.storageClass](./values.yaml#L154)
 
 </td><td>str</td><td><code>`standard`</code></td><td><p><code> Storage class of the microbin PVC</code></p></td></tr>
 </table>
