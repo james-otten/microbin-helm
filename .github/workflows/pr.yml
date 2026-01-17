@@ -44,4 +44,4 @@ jobs:
 
       - name: Run chart-testing (install)
         if: steps.list-changed.outputs.changed == 'true'
-        run: ct install --target-branch ${{ github.event.repository.default_branch }}
+        run: ct install --target-branch ${{ github.event.repository.default_branch }} --helm-extra-set-args='--set=secret.create=true --set=secret.data.MICROBIN_ADMIN_USERNAME=admin --set=secret.data.MICROBIN_ADMIN_PASSWORD=m1cr0b1n'
