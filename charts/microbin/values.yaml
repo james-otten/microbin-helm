@@ -1,0 +1,163 @@
+image:
+  # -- microbin image repository
+  repository: docker.io/danielszabo99/microbin
+  # -- microbin image pull policy
+  pullPolicy: IfNotPresent
+  # -- microbin image tag
+  tag: "latest"
+  # -- image pull secret name
+  pullSecretName: ""
+
+# -- Environment variables. See https://microbin.eu/docs/installation-and-configuration/configuration Do not use for secrets, MICROBIN_PUBLIC_PATH, or MICROBIN_PORT
+env:
+  # - name: MICROBIN_EDITABLE
+  #   value: "true"
+  # - name: MICROBIN_FOOTER_TEXT
+  #   value: ""
+  # - name: MICROBIN_HIDE_HEADER
+  #   value: "false"
+  # - name: MICROBIN_HIDE_FOOTER
+  #   value: "false"
+  # - name: MICROBIN_HIDE_LOGO
+  #   value: "false"
+  # - name: MICROBIN_NO_LISTING
+  #   value: "false"
+  # - name: MICROBIN_HIGHLIGHTSaccessModeYNTAX
+  #   value: "true"
+  - name: MICROBIN_BIND
+    value: "0.0.0.0"
+  # - name: MICROBIN_PRIVATE
+  #   value: "true"
+  # - name: MICROBIN_DATA_DIR
+  #   value: "microbin_data"
+  # - name: MICROBIN_JSON_DB
+  #   value: "false"
+  # - name: MICROBIN_PUBLIC_PATH
+  #   value: ""
+  # - name: MICROBIN_SHORT_PATH
+  #   value: ""
+  # - name: MICROBIN_READONLY
+  #   value: "false"
+  # - name: MICROBIN_SHOW_READ_STATS
+  #   value: "true"
+  # - name: MICROBIN_TITLE
+  #   value: ""
+  # - name: MICROBIN_THREADS
+  #   value: "1"
+  # - name: MICROBIN_GC_DAYS
+  #   value: "90"
+  # - name: MICROBIN_ENABLE_BURN_AFTER
+  #   value: "false"
+  # - name: MICROBIN_DEFAULT_BURN_AFTER
+  #   value: "0"
+  # - name: MICROBIN_WIDE
+  #   value: "false"
+  # - name: MICROBIN_QR
+  #   value: "false"
+  # - name: MICROBIN_ETERNAL_PASTA
+  #   value: "false"
+  # - name: MICROBIN_ENABLE_READONLY
+  #   value: "true"
+  # - name: MICROBIN_DEFAULT_EXPIRY
+  #   value: "24hour"
+  # - name: MICROBIN_NO_FILE_UPLOAD
+  #   value: "false"
+  # - name: MICROBIN_CUSTOM_CSS
+  #   value: ""
+  # - name: MICROBIN_HASH_IDS
+  #   value: "false"
+  # - name: MICROBIN_ENCRYPTION_CLIENT_SIDE
+  #   value: "false"
+  # - name: MICROBIN_ENCRYPTION_SERVER_SIDE
+  #   value: "false"
+  # - name: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB
+  #   value: "256"
+  # - name: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB
+  #   value: "2048"
+  # - name: MICROBIN_DISABLE_UPDATE_CHECKING
+  #   value: "false"
+  # - name: MICROBIN_DISABLE_TELEMETRY
+  #   value: "false"
+  # - name: MICROBIN_LIST_SERVER
+  #   value: "false"
+
+secret:
+  # -- enable secret creation
+  create: false
+  # -- secret name for sensitive configuration values
+  name: "microbin"
+  data: []
+    # MICROBIN_BASIC_AUTH_USERNAME: ""
+    # MICROBIN_BASIC_AUTH_PASSWORD: ""
+    # MICROBIN_ADMIN_USERNAME: "admin"
+    # MICROBIN_ADMIN_PASSWORD: "m1cr0b1n"
+    # MICROBIN_UPLOADER_PASSWORD: ""
+
+# -- This is to override the chart name
+nameOverride: ""
+# -- This is to override the full name
+fullnameOverride: ""
+
+# -- podAnnotations
+podAnnotations: {}
+
+# -- podLabels
+podLabels: {}
+
+# -- podSecurityContext
+podSecurityContext: {}
+
+service:
+  # -- Service type to expose the microbin pod to cluster. Options are ClusterIP, NodePort, LoadBalancer, or ExternalName
+  type: ClusterIP
+  # -- Port to expose microbin service on
+  port: 80
+  # -- Target port for the microbin container
+  containerPort: 8080
+
+hostname: chart-example.local
+
+ingress:
+  # -- Enable Ingress controller for microbin
+  enabled: false
+  # -- Ingress class to use, e.g., for GKE Ingress use "gce", for NGINX Ingress use "nginx". If using an Ingress class other than the default, ensure your cluster has the corresponding Ingress controller installed and configured.
+  className: ""
+  # -- Use appropriate annotations for your Ingress controller
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  tls:
+    # -- Enable tls for microbin
+    enabled: false
+    # -- Secret name for tls
+    secretName: microbin-tls
+
+# -- microbin resources
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+persistence:
+  # -- Enable persistence for microbin
+  enabled: true
+  # -- Mount path for the microbin_data directory
+  mountPath: /app/microbin_data
+  # -- Access mode for the microbin volume
+  accessMode: ReadWriteOnce
+  # -- Size of the microbin PVC
+  size: 1Gi
+  # -- Storage class of the microbin PVC
+  storageClass: standard
+
+# -- nodeSelector
+nodeSelector: {}
+
+# -- tolerations
+tolerations: []
+
+# -- affinity
+affinity: {}
