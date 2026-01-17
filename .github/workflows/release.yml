@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - james/init
 
 jobs:
   release:
