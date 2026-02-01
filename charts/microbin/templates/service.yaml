@@ -11,5 +11,9 @@ spec:
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
       name: http
+      targetPort: http
+      {{- if .Values.service.nodePort }}
+      nodePort: {{ .Values.service.nodePort | int }}
+      {{- end }}
   selector:
     {{- include "microbin.selectorLabels" . | nindent 4 }}
