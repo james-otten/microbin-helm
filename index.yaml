@@ -3,6 +3,23 @@ entries:
   microbin:
   - apiVersion: v2
     appVersion: 2.1.0
+    created: "2026-02-01T00:12:13.73190861Z"
+    description: Microbin - File sharing made easy
+    digest: 059bb6a457040afa28b58b6cca620694f607a4dd9807ab5a85dc7db6abb1a0da
+    home: https://github.com/james-otten/microbin-helm
+    icon: https://microbin.eu/img/logo-square.png
+    maintainers:
+    - email: info@jamesotten.com
+      name: james-otten
+    name: microbin
+    sources:
+    - https://github.com/james-otten/microbin-helm
+    type: application
+    urls:
+    - https://github.com/james-otten/microbin-helm/releases/download/microbin-0.3.0/microbin-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 2.1.0
     created: "2026-01-17T23:58:33.083086966Z"
     description: Microbin - File sharing made easy
     digest: 2e25757bd220442d46579cb6de80d854c8b6281790aabef260d58beb9ab72bf0
@@ -36,4 +53,4 @@ entries:
     urls:
     - https://github.com/james-otten/microbin-helm/releases/download/microbin-0.1.0/microbin-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-17T23:58:33.083102155Z"
+generated: "2026-02-01T00:12:13.731921744Z"
